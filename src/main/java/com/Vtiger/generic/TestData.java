@@ -50,7 +50,12 @@ public String getOrgname() {
 	return	faker.company().industry();
 
 }
-
+public String getPhoneNumber()
+{
+	Faker faker= new Faker();
+	String phone
+	return faker.
+}
 }
 
 

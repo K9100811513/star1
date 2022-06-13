@@ -1,4 +1,4 @@
-package com.Vtiger.generic;
+9package com.Vtiger.generic;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -10,7 +10,7 @@ public class Listners implements ITestListener {
 		
 	}
 
-	public void onTestSuccess(ITestResult result) {
+	public void onTestSuccess(ITestResult result) { 
 	
 		
 	}

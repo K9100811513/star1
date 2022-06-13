@@ -1,4 +1,4 @@
-package com.Vtiger.generic;
+... package com.Vtiger.generic;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +19,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.Vtiger.ObjectRe.HomePage;
 import com.Vtiger.ObjectRe.LoginPage;
@@ -30,7 +31,7 @@ public class BaseClass {
 	public WebDriver driver;
 	public static WebDriver sdriver;
 	public PropertyFiles proppertyFiles= new PropertyFiles();
-
+ //  @Parameters("BROWSER")
 	@BeforeSuite
 	public void connecttoDB() {
 		System.out.println("====DB Connection====");
@@ -43,9 +44,9 @@ public class BaseClass {
 
 	//@Parameters("BROWSER")
 	@BeforeClass
-	public void launchBrowser() throws IOException 
+	public void launchBrowser(String BROWSER) throws IOException 
 	{
-		String BROWSER=proppertyFiles.readDatafrompropertyfile("browser");
+	//	String BROWSER=proppertyFiles.readDatafrompropertyfile("browser");
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -90,13 +91,12 @@ public class BaseClass {
 
 	public static void takeScreenshot(String methodname) {
 		TakesScreenshot screenshot = (TakesScreenshot)sdriver;
+		
+		File src = screenshot.getScreenshotAs(OutputType.FILE);
 
 		String dest = "../SDET6/screenshot/"+methodname+".png";
 
-		File src = screenshot.getScreenshotAs(OutputType.FILE);
-
 		File destpath = new File(dest);
-
 		try {
 			Files.copy(src, destpath);
 		} catch (IOException e) {
