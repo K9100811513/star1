@@ -1,5 +1,6 @@
 package com.Vtiger.TestCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Vtiger.ObjectRe.CreateNewOrgPage;
@@ -8,8 +9,6 @@ import com.Vtiger.ObjectRe.OrgInfoPage;
 import com.Vtiger.generic.BaseClass;
 import com.Vtiger.generic.JavaUtil;
 import com.Vtiger.generic.TestData;
-
-import junit.framework.Assert;
 
 public class TC01_CreateOrg extends BaseClass {
 	//@Parameters("Orgname")
@@ -42,10 +41,11 @@ public class TC01_CreateOrg extends BaseClass {
 		Thread.sleep(3000);
 
 		String actualorgname=orgInfoPage.getfirstOrg().getText();
+		Thread.sleep(3000);
 
 		Assert.assertFalse(true);
 		Assert.assertEquals(Orgname, actualorgname);
-		
+
 	}
 
 }

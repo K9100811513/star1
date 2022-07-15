@@ -2,6 +2,7 @@ package com.Vtiger.TestCases;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Vtiger.ObjectRe.ConatctInfoPage;
@@ -12,7 +13,6 @@ import com.Vtiger.generic.BaseClass;
 import com.Vtiger.generic.TestData;
 import com.Vtiger.generic.webdriverutil;
 
-import junit.framework.Assert;
 
 public class TC03_CreateContact_org extends BaseClass {
 	//@Parameters("Contactsname")
@@ -44,7 +44,7 @@ public class TC03_CreateContact_org extends BaseClass {
 
 		ContactOrg_popup contactOrg_popup = new ContactOrg_popup(driver);
 
-		contactOrg_popup.searchandSelectforOrg("Mango");
+		contactOrg_popup.searchandSelectforOrg("Glass, Ceramics & Concrete929");
 
 		Thread.sleep(2000);
 		webDriverUtil.switchWindow("Contacts");

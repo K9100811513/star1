@@ -3,19 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.TESTNG.pac.Test1Listners">
+      <class name="com.Vtiger.TestCases.TC01_CreateOrg">
         <methods>
-          <include name="bs"/>
-          <include name="bc"/>
-          <include name="at"/>
-          <include name="as"/>
-          <include name="bt"/>
-          <include name="ac"/>
-          <include name="testWebapp2"/>
-          <include name="am"/>
-          <include name="bm"/>
+          <include name="connecttoDB"/>
+          <include name="disConnectDB"/>
+          <include name="logout"/>
+          <include name="launchBrowser"/>
+          <include name="createorg"/>
+          <include name="closeBrowser"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- com.TESTNG.pac.Test1Listners -->
+      </class> <!-- com.Vtiger.TestCases.TC01_CreateOrg -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

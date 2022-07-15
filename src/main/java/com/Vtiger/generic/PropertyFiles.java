@@ -8,7 +8,7 @@ public class PropertyFiles {
 
 	
 		public String readDatafrompropertyfile(String key) throws IOException {
-			FileInputStream fis = new FileInputStream("C:\\KCSM12\\TYSS_KALPANA1\\vtiger.properties");
+			FileInputStream fis = new FileInputStream("../TYSS_KALPANA1/vtiger.properties");
 
 			Properties prop = new Properties();
 			prop.load(fis);

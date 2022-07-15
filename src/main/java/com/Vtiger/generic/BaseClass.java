@@ -1,4 +1,4 @@
-... package com.Vtiger.generic;
+package com.Vtiger.generic;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class BaseClass {
 	public WebDriver driver;
 	public static WebDriver sdriver;
 	public PropertyFiles proppertyFiles= new PropertyFiles();
- //  @Parameters("BROWSER")
+	//  @Parameters("BROWSER")
 	@BeforeSuite
 	public void connecttoDB() {
 		System.out.println("====DB Connection====");
@@ -44,9 +44,9 @@ public class BaseClass {
 
 	//@Parameters("BROWSER")
 	@BeforeClass
-	public void launchBrowser(String BROWSER) throws IOException 
+	public void launchBrowser() throws IOException 
 	{
-	//	String BROWSER=proppertyFiles.readDatafrompropertyfile("browser");
+			String BROWSER=proppertyFiles.readDatafrompropertyfile("browser");
 
 		if (BROWSER.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -87,14 +87,14 @@ public class BaseClass {
 		driver.close();
 	}
 
-	
 
-	public static void takeScreenshot(String methodname) {
+
+	public static String takeScreenshot(String methodname) {
 		TakesScreenshot screenshot = (TakesScreenshot)sdriver;
-		
+
 		File src = screenshot.getScreenshotAs(OutputType.FILE);
 
-		String dest = "../SDET6/screenshot/"+methodname+".png";
+		String dest = "../TYSS_KALPANA1/screenshot/"+methodname+".png";
 
 		File destpath = new File(dest);
 		try {
@@ -102,8 +102,8 @@ public class BaseClass {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return dest;
 	}
 }
-	
 
-	
+
